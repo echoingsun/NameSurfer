@@ -17,6 +17,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	private JTextField textField = new JTextField (TF_LEN);
 	private JButton graph = new JButton ("Graph");
 	private JButton clear = new JButton ("Clear");
+	private NameSurferDataBase namesData;
 	
 /* Method: init() */
 /**
@@ -24,14 +25,23 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
  * and initializing the interactors at the top of the window.
  */
 	public void init() {
-	    add (nameLabel, NORTH);
+		
+		loadDatabase();
+		
+		add (nameLabel, NORTH);
 	    add (textField, NORTH);
 	    add (graph, NORTH);
 	    add (clear, NORTH);
 	    
 	    addActionListeners();
 	   
+	   
 	}
+
+private void loadDatabase() {
+	namesData = new NameSurferDataBase(NAMES_DATA_FILE);
+	
+}
 
 /* Method: actionPerformed(e) */
 /**
@@ -42,7 +52,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("Graph")){
 			String nameEntry = textField.getText();
-			println ("Graph: " + nameEntry);
+			println ("Graph: " + namesData.findEntry(nameEntry).toString());
 		}
 		if (e.getActionCommand().equals("Clear")){
 			println ("Clear");
