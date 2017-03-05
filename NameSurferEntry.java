@@ -11,6 +11,7 @@ import java.util.*;
 
 public class NameSurferEntry implements NameSurferConstants {
 
+	HashMap <String, String> dataFile = new Hashmap <String, String>;
 	private String name;
 	private String[] rankstr = new String[NDECADES + 1];
 	
