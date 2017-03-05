@@ -8,5 +8,8 @@ public class testtest extends ConsoleProgram implements NameSurferConstants {
 		println (test.toString());
 		println (test.getName());
 		println (test.getRank(2000));
+		
+		
+		
 	}
 }
