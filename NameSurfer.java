@@ -12,13 +12,22 @@ import javax.swing.*;
 
 public class NameSurfer extends Program implements NameSurferConstants {
 
+	// Define some interactors as instance variables.
+	private JLabel nameLabel = new JLabel ("Name");
+	private JTextField textField = new JTextField (15);
+	private JButton graph = new JButton ("Graph");
+	private JButton clear = new JButton ("Clear");
+	
 /* Method: init() */
 /**
  * This method has the responsibility for reading in the data base
  * and initializing the interactors at the top of the window.
  */
 	public void init() {
-	    // You fill this in, along with any helper methods //
+	    add (nameLabel, NORTH);
+	    add (textField, NORTH);
+	    add (graph, NORTH);
+	    add (clear, NORTH);
 	}
 
 /* Method: actionPerformed(e) */
