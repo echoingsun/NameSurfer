@@ -53,7 +53,9 @@ private void loadDatabase() {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("Graph")){
 			String nameEntry = textField.getText();
-			println ("Graph: " + namesData.findEntry(nameEntry).toString());
+			if (namesData.findEntry(nameEntry) != null){
+				println ("Graph: " + namesData.findEntry(nameEntry).toString());
+			}			
 		}
 		if (e.getActionCommand().equals("Clear")){
 			println ("Clear");
