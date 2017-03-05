@@ -11,10 +11,8 @@ import java.util.*;
 
 public class NameSurferEntry implements NameSurferConstants {
 
-	HashMap <String, String> dataFile = new HashMap <String, String>();
-	
 	private String name;
-	private String[] rankstr = new String[NDECADES + 1];
+	private int[] rank = new int[NDECADES];
 	
 /* Constructor: NameSurferEntry(line) */
 /**
@@ -24,7 +22,11 @@ public class NameSurferEntry implements NameSurferConstants {
  * decade.
  */
 	public NameSurferEntry(String line) {
-		this.name = line;
+		String[] parts = line.split(" ");
+		this.name = parts[0];
+		for (int i = 0; i < rank.length; i++){
+			this.rank[i] = Integer.parseInt(parts [i + 1]);
+		}
 		
 	}
 
@@ -33,8 +35,7 @@ public class NameSurferEntry implements NameSurferConstants {
  * Returns the name associated with this entry.
  */
 	public String getName() {
-		// You need to turn this stub into a real implementation //
-		return null;
+		return name;
 	}
 
 /* Method: getRank(decade) */
@@ -46,8 +47,7 @@ public class NameSurferEntry implements NameSurferConstants {
  * not appear in a decade, the rank value is 0.
  */
 	public int getRank(int decade) {
-		// You need to turn this stub into a real implementation //
-		return 0;
+		return rank[(decade - START_DECADE) / 10];
 	}
 
 /* Method: toString() */
@@ -56,8 +56,7 @@ public class NameSurferEntry implements NameSurferConstants {
  * NameSurferEntry.
  */
 	public String toString() {
-		// You need to turn this stub into a real implementation //
-		return "";
+		return this.toString();
 	}
 }
 
