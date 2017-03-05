@@ -60,7 +60,7 @@ public class NameSurferEntry implements NameSurferConstants {
 		for (int i = 0; i < rank.length; i ++){
 			s += Integer.toString(rank[i]) + " ";
 		}
-		return (name + "" + s);
+		return (name + " " + s);
 	}
 }
 
