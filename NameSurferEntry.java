@@ -56,7 +56,7 @@ public class NameSurferEntry implements NameSurferConstants {
  * NameSurferEntry.
  */
 	public String toString() {
-		return this.toString();
+		return (name + rank.toString());
 	}
 }
 
