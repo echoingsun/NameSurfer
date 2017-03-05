@@ -14,7 +14,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 
 	// Define some interactors as instance variables.
 	private JLabel nameLabel = new JLabel ("Name");
-	private JTextField textField = new JTextField (15);
+	private JTextField textField = new JTextField (TF_LEN);
 	private JButton graph = new JButton ("Graph");
 	private JButton clear = new JButton ("Clear");
 	
