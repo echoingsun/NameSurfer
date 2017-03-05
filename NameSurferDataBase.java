@@ -52,9 +52,11 @@ public class NameSurferDataBase implements NameSurferConstants {
 		String entry = "";
 		if (dataBase.containsKey(name.toLowerCase())){
 			entry = dataBase.get(name.toLowerCase());
+			NameSurferEntry newEntry = new NameSurferEntry(entry);
+			return newEntry;
 		}
-		NameSurferEntry newEntry = new NameSurferEntry(entry);
-		return newEntry;
+		return null;
+		
 	}
 }
 
