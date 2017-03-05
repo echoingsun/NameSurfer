@@ -28,6 +28,8 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	    add (textField, NORTH);
 	    add (graph, NORTH);
 	    add (clear, NORTH);
+	    
+	    addActionListeners();
 	}
 
 /* Method: actionPerformed(e) */
@@ -37,6 +39,12 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
  * button actions.
  */
 	public void actionPerformed(ActionEvent e) {
-		// You fill this in //
+		if (e.getActionCommand().equals("Graph")){
+			String nameEntry = textField.getText();
+			println ("Graph: " + nameEntry);
+		}
+		if (e.getActionCommand().equals("Clear")){
+			println ("Clear");
+		}
 	}
 }
