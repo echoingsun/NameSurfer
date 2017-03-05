@@ -22,7 +22,8 @@ public class NameSurferEntry implements NameSurferConstants {
  * decade.
  */
 	public NameSurferEntry(String line) {
-		// You fill this in //
+		this.name = line;
+		
 	}
 
 /* Method: getName() */
