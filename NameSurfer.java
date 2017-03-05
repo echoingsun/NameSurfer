@@ -1,4 +1,5 @@
 /*
+ * Name: Rachel Sun
  * File: NameSurfer.java
  * ---------------------
  * When it is finished, this program will implements the viewer for
