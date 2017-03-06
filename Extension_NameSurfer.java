@@ -18,6 +18,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 	private JTextField textField = new JTextField(TF_LEN);
 	private JButton graphButton = new JButton("Graph");
 	private JButton clearButton = new JButton("Clear");
+	private JButton removeButton = new JButton ("Remove");
 	
 	// Define the database to be used.
 	private Extension_NameSurferDataBase namesData;
@@ -36,6 +37,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 		add(textField, NORTH);
 		add(graphButton, NORTH);
 		add(clearButton, NORTH);
+		add(removeButton, NORTH);
 
 		addActionListeners();
 
@@ -100,6 +102,17 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 		// Click on JButton clear asks the NameSurferGraph to clear its contents.
 		if (e.getActionCommand().equals("Clear")) {
 			graph.clear();
+		}
+		
+		if (e.getActionCommand().equals("Remove")){
+			String nameEntry = textField.getText();
+			
+			for (int i = 0; i < graph.entryList.size(); i++){
+				if (nameEntry.equals(graph.entryList.get(i).getName())){
+					graph.removeEntry(graph.entryList.get(i));
+				}
+			}			
+			
 		}
 	}
 }
