@@ -5,6 +5,11 @@
  * ---------------------
  * When it is finished, this program will implements the viewer for
  * the baby-name database described in the assignment handout.
+ * 
+ * Improved functions:
+ * (1) Added "remove" button. If user wants to remove the graph of a certain
+ * name that's already on the screen, put that name in the text field and click
+ * "remove".
  */
 
 import acm.program.*;
@@ -104,9 +109,14 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 			graph.clear();
 		}
 		
+		// Click on JButton remove removes the entry from the 
+		// array list in Extension_NameSurferGraph.
 		if (e.getActionCommand().equals("Remove")){
 			String nameEntry = textField.getText().toLowerCase();
 			
+			// Loop to see if the array list already contains the 
+			// entry that is connected with the name entered in the 
+			// text box.
 			for (int i = 0; i < graph.entryList.size(); i++){
 				if (nameEntry.equals(graph.entryList.get(i).getName().toLowerCase())){
 					graph.removeEntry(graph.entryList.get(i));
