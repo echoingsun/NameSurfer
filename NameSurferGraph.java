@@ -52,8 +52,8 @@ public class NameSurferGraph extends GCanvas
 	* the size of the canvas changes.
 	*/
 	public void update() {
-/*		this.removeAll();
-		this.drawBackground();*/
+		this.removeAll();
+		this.drawBackground();
 	}
 	
 	public void drawBackground(){
