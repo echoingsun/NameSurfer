@@ -44,16 +44,18 @@ public class NameSurferGraph extends GCanvas
 		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE;
 		int yRange = bottom - top;
 		
+		double xi =0;
+		double yi = 0;
+		double _xi = 0;
+		double _yi = 0;
+		
 		double interval = this.getWidth() / NDECADES;
 		
 		for (int i = 1; i < NDECADES; i ++){
 			int value = entry.getRank(i);
 			int _value = entry.getRank(i-1);
 			
-			double xi =0;
-			double yi = 0;
-			double _xi = 0;
-			double _yi = 0;
+			
 			String nameNRank ="";
 			String _nameNRank = "";
 			
