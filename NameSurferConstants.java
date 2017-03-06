@@ -33,6 +33,6 @@ public interface NameSurferConstants {
 	public static final int TF_LEN = 20;
 	
 	/** The indent of the decade label */
-	public static final int IDT = 20;
+	public static final int IDT = 5;
 
 }
