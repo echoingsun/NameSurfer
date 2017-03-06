@@ -15,6 +15,7 @@ import java.awt.*;
 public class NameSurferGraph extends GCanvas
 	implements NameSurferConstants, ComponentListener {
 
+	private GCanvas graph;
 	private double graphW;
 	private double graphH;
 	
@@ -28,6 +29,7 @@ public class NameSurferGraph extends GCanvas
 	*/
 	public NameSurferGraph() {
 		addComponentListener(this);
+		graph = new GCanvas();
 		drawBackground();
 	}
 	
@@ -64,17 +66,17 @@ public class NameSurferGraph extends GCanvas
 	
 	private void drawBackground(){
 		
-		double interval = getWidth() / NDECADES;
+		double interval = graph.getWidth() / NDECADES;
 		for (int i = 0; i < NDECADES - 1; i ++){
-			GLine line = new GLine (interval * (i+1), 0, interval * (i+1), getHeight());
-			this.add(line);
+			GLine line = new GLine (interval * (i+1), 0, interval * (i+1), graph.getHeight());
+			graph.add(line);
 		}
 		
-		GLine upperMargin = new GLine(0, GRAPH_MARGIN_SIZE, getWidth(), GRAPH_MARGIN_SIZE);
-		GLine bottomMargin = new GLine(0, getHeight() - GRAPH_MARGIN_SIZE, getWidth(), getHeight() - GRAPH_MARGIN_SIZE);
+		GLine upperMargin = new GLine(0, GRAPH_MARGIN_SIZE, graph.getWidth(), GRAPH_MARGIN_SIZE);
+		GLine bottomMargin = new GLine(0, graph.getHeight() - GRAPH_MARGIN_SIZE, graph.getWidth(), graph.getHeight() - GRAPH_MARGIN_SIZE);
 		
-		this.add(upperMargin);
-		this.add(bottomMargin);
+		graph.add(upperMargin);
+		graph.add(bottomMargin);
 	}
 	
 	
