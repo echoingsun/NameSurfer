@@ -69,7 +69,7 @@ public class NameSurferGraph extends GCanvas
 		this.drawBackground();
 	}
 	
-	public void drawBackground(){
+	private void drawBackground(){
 		
 		double interval = this.getWidth() / NDECADES;
 		for (int i = 0; i < NDECADES - 1; i ++){
