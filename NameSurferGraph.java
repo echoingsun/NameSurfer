@@ -40,6 +40,12 @@ public class NameSurferGraph extends GCanvas
 	* simply stores the entry; the graph is drawn by calling update.
 	*/
 	public void addEntry(NameSurferEntry entry) {
+		drawGraph(entry);
+		
+	}
+	
+	
+	private void drawGraph(NameSurferEntry entry) {
 		int top = GRAPH_MARGIN_SIZE;
 		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE;
 		int yRange = bottom - top;
@@ -83,9 +89,10 @@ public class NameSurferGraph extends GCanvas
 			this.add(nameNRankLabel, xi + IDT, yi - IDT );
 			
 		}
+		
 	}
-	
-	
+
+
 	/**
 	* Updates the display image by deleting all the graphical objects
 	* from the canvas and then reassembling the display according to
