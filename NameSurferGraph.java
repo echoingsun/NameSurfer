@@ -22,7 +22,7 @@ public class NameSurferGraph extends GCanvas
 	*/
 	public NameSurferGraph() {
 		addComponentListener(this);
-		drawBackground();
+	
 
 	}
 	
