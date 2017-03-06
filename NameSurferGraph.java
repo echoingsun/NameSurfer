@@ -57,16 +57,16 @@ public class NameSurferGraph extends GCanvas
 		// You fill this in //
 	}
 	
-	private void drawBackground(){
+	public void drawBackground(){
 		
-		double interval = APPLICATION_WIDTH / NDECADES;
+		double interval = this.getWidth() / NDECADES;
 		for (int i = 0; i < NDECADES - 1; i ++){
-			GLine line = new GLine (interval * (i+1), 0, interval * (i+1), APPLICATION_HEIGHT);
+			GLine line = new GLine (interval * (i+1), 0, interval * (i+1), this.getHeight());
 			this.add(line);
 		}
 		
-		GLine upperMargin = new GLine(0, GRAPH_MARGIN_SIZE, APPLICATION_WIDTH, GRAPH_MARGIN_SIZE);
-		GLine bottomMargin = new GLine(0, APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE, APPLICATION_WIDTH, APPLICATION_HEIGHT - GRAPH_MARGIN_SIZE);
+		GLine upperMargin = new GLine(0, GRAPH_MARGIN_SIZE, this.getWidth(), GRAPH_MARGIN_SIZE);
+		GLine bottomMargin = new GLine(0, this.getHeight() - GRAPH_MARGIN_SIZE, this.getWidth(), this.getHeight() - GRAPH_MARGIN_SIZE);
 		
 		this.add(upperMargin);
 		this.add(bottomMargin);
