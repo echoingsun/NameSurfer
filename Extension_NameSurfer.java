@@ -104,7 +104,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 				// Add that new entry to the graph.
 				graph.addEntry(newInquiry);
 			} else {
-				showMessage();
+				graph.showMessage();
 			}
 		}
 
@@ -129,15 +129,9 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 					removed = true;
 				}
 			}
-			if (removed == false) showMessage();
+			if (removed == false) graph.showMessage();
 		}
 	}
 
-	private void showMessage() {
-		GLabel noRecord = new GLabel("Record not found." + "\n" + "Please try a new search.");
-		graph.add(noRecord, (this.getWidth() - noRecord.getWidth()) * 0.5,
-				(this.getHeight() + noRecord.getAscent()) * 0.5);
-		pause (2000);
-		graph.remove(noRecord);
-	}
+
 }
