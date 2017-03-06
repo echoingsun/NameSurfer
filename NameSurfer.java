@@ -36,9 +36,15 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	    add (clearButton, NORTH);
 	    
 	    addActionListeners();  
+	    getKeyListeners();
+	    
 	    
 	    
 	   
+	}
+	
+	public void keyPressed (KeyEvent e){
+		
 	}
 	
 	public void run() {
