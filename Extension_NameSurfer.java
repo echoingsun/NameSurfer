@@ -105,10 +105,10 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 		}
 		
 		if (e.getActionCommand().equals("Remove")){
-			String nameEntry = textField.getText();
+			String nameEntry = textField.getText().toLowerCase();
 			
 			for (int i = 0; i < graph.entryList.size(); i++){
-				if (nameEntry.equals(graph.entryList.get(i).getName())){
+				if (nameEntry.equals(graph.entryList.get(i).getName().toLowerCase())){
 					graph.removeEntry(graph.entryList.get(i));
 				}
 			}			
