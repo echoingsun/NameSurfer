@@ -54,10 +54,11 @@ public class NameSurferGraph extends GCanvas
 	* the size of the canvas changes.
 	*/
 	public void update() {
-		// You fill this in //
+		this.removeAll();
+		this.drawBackground();
 	}
 	
-	public void drawBackground(){
+	private void drawBackground(){
 		
 		double interval = this.getWidth() / NDECADES;
 		for (int i = 0; i < NDECADES - 1; i ++){
