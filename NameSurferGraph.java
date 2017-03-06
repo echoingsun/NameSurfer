@@ -23,8 +23,8 @@ public class NameSurferGraph extends GCanvas
 	public NameSurferGraph() {
 		addComponentListener(this);
 		// drawBackground();
-		GLine upperMargin = new GLine(200,200,200,200);
-		GLine bottomMargin = new GLine(300,200,300,200);
+		GLine upperMargin = new GLine(200,150,400,280);
+		GLine bottomMargin = new GLine(300,200,500,100);
 		
 		this.add(upperMargin);
 		this.add(bottomMargin);
