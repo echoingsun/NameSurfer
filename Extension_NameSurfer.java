@@ -12,6 +12,7 @@
  * "remove".
  */
 
+import acm.graphics.GLabel;
 import acm.program.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -23,11 +24,11 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 	private JTextField textField = new JTextField(TF_LEN);
 	private JButton graphButton = new JButton("Graph");
 	private JButton clearButton = new JButton("Clear");
-	private JButton removeButton = new JButton ("Remove");
-	
+	private JButton removeButton = new JButton("Remove");
+
 	// Define the database to be used.
 	private Extension_NameSurferDataBase namesData;
-	
+
 	// Define the canvas to display data.
 	private Extension_NameSurferGraph graph;
 
@@ -43,7 +44,6 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 		add(graphButton, NORTH);
 		add(removeButton, NORTH);
 		add(clearButton, NORTH);
-		
 
 		addActionListeners();
 
@@ -54,11 +54,12 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					
+
 					// Detailed comments see method ActionPerformed
 					String nameEntry = textField.getText();
 					if (namesData.findEntry(nameEntry) != null) {
-						Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(namesData.findEntry(nameEntry).toString());
+						Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(
+								namesData.findEntry(nameEntry).toString());
 						graph.addEntry(newInquiry);
 					}
 				}
@@ -76,54 +77,65 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 	}
 
 	/*
-	 * Method loadDatabase initializes the db that stores the information
-	 * from the names-data.txt.
+	 * Method loadDatabase initializes the db that stores the information from
+	 * the names-data.txt.
 	 */
 	private void loadDatabase() {
 		namesData = new Extension_NameSurferDataBase(NAMES_DATA_FILE);
 	}
 
-	
 	public void actionPerformed(ActionEvent e) {
-		
+
 		// Click on JButon graph will add an entry to the NameSurferGraph
 		// if the name entered can be traced with record in the database.
 		if (e.getActionCommand().equals("Graph")) {
-			
+
 			// Get name from the textbox.
 			String nameEntry = textField.getText();
-			
+
 			// Ask the database to find the related record if any.
 			if (namesData.findEntry(nameEntry) != null) {
-				
-				// Return the result from database, 
+
+				// Return the result from database,
 				// Generate a new entry from the result.
-				Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(namesData.findEntry(nameEntry).toString());
-				
+				Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(
+						namesData.findEntry(nameEntry).toString());
+
 				// Add that new entry to the graph.
 				graph.addEntry(newInquiry);
+			} else {
+				showMessage();
 			}
 		}
-		
-		// Click on JButton clear asks the NameSurferGraph to clear its contents.
+
+		// Click on JButton clear asks the NameSurferGraph to clear its
+		// contents.
 		if (e.getActionCommand().equals("Clear")) {
 			graph.clear();
 		}
-		
-		// Click on JButton remove removes the entry from the 
+
+		// Click on JButton remove removes the entry from the
 		// array list in Extension_NameSurferGraph.
-		if (e.getActionCommand().equals("Remove")){
+		if (e.getActionCommand().equals("Remove")) {
 			String nameEntry = textField.getText().toLowerCase();
-			
-			// Loop to see if the array list already contains the 
-			// entry that is connected with the name entered in the 
+
+			// Loop to see if the array list already contains the
+			// entry that is connected with the name entered in the
 			// text box.
-			for (int i = 0; i < graph.entryList.size(); i++){
-				if (nameEntry.equals(graph.entryList.get(i).getName().toLowerCase())){
+			for (int i = 0; i < graph.entryList.size(); i++) {
+				if (nameEntry.equals(graph.entryList.get(i).getName().toLowerCase())) {
 					graph.removeEntry(graph.entryList.get(i));
 				}
-			}			
-			
+			}
+
 		}
+	}
+
+	private void showMessage() {
+		GLabel noRecord = new GLabel("Record not found." + "\n" + "Please try a new search.");
+		graph.add(noRecord, (this.getWidth() - noRecord.getWidth()) * 0.5,
+				(this.getHeight() + noRecord.getAscent()) * 0.5);
+		pause (2000);
+		graph.remove(noRecord);
 	}
 }
