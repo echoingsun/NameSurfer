@@ -82,24 +82,27 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 			GLabel nameNRankLabel = new GLabel(nameNRank);
 			GLabel _nameNRankLabel = new GLabel(_nameNRank);
 
+			Color c = null;
 			switch (entryListIndex % 4) {
 			case 0:
-				graphLine.setColor(Color.BLACK);
-				nameNRankLabel.setColor(Color.BLACK);
+				c = Color.BLACK;
 				break;
 			case 1:
-				graphLine.setColor(Color.RED);
-				nameNRankLabel.setColor(Color.RED);
+				c = Color.RED;
 				break;
 			case 2:
-				graphLine.setColor(Color.BLUE);
-				nameNRankLabel.setColor(Color.BLUE);
+				c = Color.BLUE;
 				break;
 			case 3:
-				graphLine.setColor(Color.MAGENTA);
-				nameNRankLabel.setColor(Color.MAGENTA);
+				c = Color.MAGENTA;
 				break;
+			default: c = Color.BLACK;
 			}
+			
+			
+			graphLine.setColor(c);
+			nameNRankLabel.setColor(c);
+			
 			this.add(graphLine);
 
 			if (i == 1) {
