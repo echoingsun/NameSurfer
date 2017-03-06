@@ -59,6 +59,8 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 					// Detailed comments see method ActionPerformed
 					String nameEntry = textField.getText();
 					if (namesData.findEntry(nameEntry) != null) {
+						// Empty the text box for the next entry.
+						textField.setText("");
 						Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(
 								namesData.findEntry(nameEntry).toString());
 						graph.addEntry(newInquiry);
@@ -99,6 +101,9 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 			// Ask the database to find the related record if any.
 			if (namesData.findEntry(nameEntry) != null) {
 
+				// Empty the text box for the next entry.
+				textField.setText("");
+				
 				// Return the result from database,
 				// Generate a new entry from the result.
 				Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(
@@ -132,7 +137,12 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 					removed = true;
 				}
 			}
-			if (removed == false) graph.showMessage();
+			if (removed == false) {
+				graph.showMessage();
+			} else {
+				// Empty the text box for the next entry.
+				textField.setText("");
+			}
 		}
 	}
 
