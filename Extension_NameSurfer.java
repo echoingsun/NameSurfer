@@ -11,6 +11,7 @@
  * name that's already on the screen, put that name in the text field and click
  * "remove".
  * (2) Display error message when record is not found.
+ * (3) Empty the text field for next inquiry when a search returns valid record.
  */
 
 import acm.graphics.GLabel;
