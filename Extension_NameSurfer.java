@@ -61,6 +61,8 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 						Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(
 								namesData.findEntry(nameEntry).toString());
 						graph.addEntry(newInquiry);
+					}else {
+						graph.showMessage();
 					}
 				}
 			}
