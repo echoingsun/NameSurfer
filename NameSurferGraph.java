@@ -70,6 +70,9 @@ public class NameSurferGraph extends GCanvas
 			if (_value == 0){
 				_yi = top + yRange * (_value * 1.00 / MAX_RANK );
 				_nameNRank = entry.getName () + " " + Integer.toString(_value);
+			} else {
+				_yi = top + yRange * (value * 1.00 / MAX_RANK );
+				_nameNRank = entry.getName() + " " + Integer.toString(value);
 			}
 						
 			GLine graphLine = new GLine (_xi,_yi,xi,yi);
