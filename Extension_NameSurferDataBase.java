@@ -1,5 +1,6 @@
 
 /*
+ * Name: Rachel Sun
  * File: NameSurferDataBase.java
  * -----------------------------
  * This class keeps track of the complete database of names.
