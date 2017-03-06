@@ -122,12 +122,14 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 			// Loop to see if the array list already contains the
 			// entry that is connected with the name entered in the
 			// text box.
+			boolean removed = false;
 			for (int i = 0; i < graph.entryList.size(); i++) {
 				if (nameEntry.equals(graph.entryList.get(i).getName().toLowerCase())) {
 					graph.removeEntry(graph.entryList.get(i));
+					removed = true;
 				}
 			}
-
+			if (removed == false) showMessage();
 		}
 	}
 
