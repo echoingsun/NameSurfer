@@ -66,7 +66,7 @@ public class NameSurferGraph extends GCanvas
 			int decade = START_DECADE + 10 * i;
 			String decadeStr = Integer.toString(decade);
 			GLabel decadeLabel = new GLabel (decadeStr);
-			add (decadeLabel, IDT + interval * i, this.getHeight());
+			add (decadeLabel, IDT + interval * i, this.getHeight() - IDT);
 		}
 		
 		GLine upperMargin = new GLine(0, GRAPH_MARGIN_SIZE, this.getWidth(), GRAPH_MARGIN_SIZE);
