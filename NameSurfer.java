@@ -36,9 +36,13 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	    add (clearButton, NORTH);
 	    
 	    addActionListeners();   
-	    graph.drawBackground();
+	    
 	    
 	   
+	}
+	
+	public void run() {
+		graph.drawBackground();
 	}
 	
 
@@ -46,7 +50,6 @@ public class NameSurfer extends Program implements NameSurferConstants {
 private void loadGraph() {
 	graph = new NameSurferGraph();
 	add(graph);
-	
 	
 }
 
