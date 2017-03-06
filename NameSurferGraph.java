@@ -107,10 +107,16 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 			double _xi = interval * (i - 1);
 			double _yi = top + yRange * (_value * 1.00 / MAX_RANK);
 
+			// For each rank looped, make a line between it
+			// and the previous decade.
 			GLine graphLine = new GLine(_xi, _yi, xi, yi);
+			
+			// Also make labels to show on each decade point.
 			GLabel nameNRankLabel = new GLabel(nameNRank);
 			GLabel _nameNRankLabel = new GLabel(_nameNRank);
 
+			// Define a color loop that helps change colors 
+			// of the consecutive entries.
 			Color c = null;
 			switch (entryListIndex % 4) {
 			case 0:
@@ -129,20 +135,24 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 				c = Color.BLACK;
 				break;
 			}
-
+			
+			// Set both the label and the lines into that one
+			// same color.
 			graphLine.setColor(c);
 			nameNRankLabel.setColor(c);
 
 			this.add(graphLine);
 
+			// For the labels, when i = 1, it also needs to 
+			// display the label of the (i-1)'th rank.
+			// IDT is the indent (defined as constant) to make
+			// the interface a better looking one.
 			if (i == 1) {
 				_nameNRankLabel.setColor(nameNRankLabel.getColor());
 				this.add(_nameNRankLabel, _xi + IDT, _yi - IDT);
 			}
 			this.add(nameNRankLabel, xi + IDT, yi - IDT);
-
 		}
-
 	}
 
 	/**
