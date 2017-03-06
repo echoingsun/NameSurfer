@@ -40,7 +40,19 @@ public class NameSurferGraph extends GCanvas
 	* simply stores the entry; the graph is drawn by calling update.
 	*/
 	public void addEntry(NameSurferEntry entry) {
-		// You fill this in //
+		int top = GRAPH_MARGIN_SIZE;
+		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE;
+		int yRange = bottom - top;
+		
+		double interval = this.getWidth() / NDECADES;
+		
+		for (int i = 1; i < NDECADES; i ++){
+			double xi = interval * i;
+			double yi = top + yRange * (entry.getRank(i) / MAX_RANK);
+			double _xi = interval * (i-1);
+			double _yi = top + yRange * (entry.getRank((i-1) / MAX_RANK);
+			GLine graphLine = new GLine ()
+		}
 	}
 	
 	
