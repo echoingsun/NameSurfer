@@ -21,7 +21,7 @@ public class Extension_NameSurferDataBase implements NameSurferConstants {
 
 	// The database is actually a HashMap -
 	// It reads the data from the file and stores them into the HashMap.
-	HashMap<String, NameSurferEntry> dataBase = new HashMap<String, NameSurferEntry>();
+	HashMap<String, Extension_NameSurferEntry> dataBase = new HashMap<String, Extension_NameSurferEntry>();
 
 	/*
 	 * The constructor creates a new NameSurferDataBase and initializes it using
@@ -41,7 +41,7 @@ public class Extension_NameSurferDataBase implements NameSurferConstants {
 
 				// For each line read, generate a new entry
 				// and put it in the hashmap.
-				NameSurferEntry newEntry = new NameSurferEntry(line);
+				Extension_NameSurferEntry newEntry = new Extension_NameSurferEntry(line);
 				dataBase.put(newEntry.getName().toLowerCase(), newEntry);
 			}
 			br.close();
@@ -54,7 +54,7 @@ public class Extension_NameSurferDataBase implements NameSurferConstants {
 	 * Returns the NameSurferEntry associated with this name, if one exists. If
 	 * the name does not appear in the database, this method returns null.
 	 */
-	public NameSurferEntry findEntry(String name) {
+	public Extension_NameSurferEntry findEntry(String name) {
 		if (dataBase.containsKey(name.toLowerCase())) {
 			return dataBase.get(name.toLowerCase());
 		}
