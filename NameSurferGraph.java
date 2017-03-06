@@ -14,7 +14,8 @@ import java.awt.*;
 
 public class NameSurferGraph extends GCanvas
 	implements NameSurferConstants, ComponentListener {
-
+	
+	ArrayList <NameSurferEntry> entryList= new ArrayList <NameSurferEntry>();
 
 
 	/**
@@ -40,7 +41,9 @@ public class NameSurferGraph extends GCanvas
 	* simply stores the entry; the graph is drawn by calling update.
 	*/
 	public void addEntry(NameSurferEntry entry) {
-		drawGraph(entry);
+		entryList.add(entry);
+		this.update();
+		
 		
 	}
 	
@@ -103,6 +106,10 @@ public class NameSurferGraph extends GCanvas
 	public void update() {
 		this.removeAll();
 		this.drawBackground();
+
+		for (int i = 0; i < entryList.size(); i ++){
+			drawGraph(entryList.get(i));
+		}
 	}
 	
 	private void drawBackground(){
