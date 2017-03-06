@@ -59,9 +59,6 @@ public class NameSurfer extends Program implements NameSurferConstants {
 
 	}
 
-/*	public void run() {
-
-	}*/
 
 	private void loadGraph() {
 		graph = new NameSurferGraph();
