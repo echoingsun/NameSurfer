@@ -73,7 +73,7 @@ private void loadDatabase() {
 			}			
 		}
 		if (e.getActionCommand().equals("Clear")){
-			println ("Clear");
+			graph.clear();
 		}
 	}
 }
