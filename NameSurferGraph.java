@@ -1,5 +1,6 @@
 
 /*
+ * Name: Rachel Sun
  * File: NameSurferGraph.java
  * ---------------------------
  * This class represents the canvas on which the graph of
@@ -15,38 +16,52 @@ import java.awt.*;
 
 public class NameSurferGraph extends GCanvas implements NameSurferConstants, ComponentListener {
 
+	// Define an array list that will be used to store the entries.
 	ArrayList<NameSurferEntry> entryList = new ArrayList<NameSurferEntry>();
 
-	/**
-	 * Creates a new NameSurferGraph object that displays the data.
+	/*
+	 * The constructor creates a new NameSurferGraph (GCanvas).
 	 */
 	public NameSurferGraph() {
 		addComponentListener(this);
 	}
 
-	/**
-	 * Clears the list of name surfer entries stored inside this class.
+	/*
+	 * Method clear empties the record in the arrayList entryList, and
+	 * simultaneously update (clear) the graph.
 	 */
 	public void clear() {
 		entryList.clear();
 		this.update();
 	}
 
-	/* Method: addEntry(entry) */
-	/**
-	 * Adds a new NameSurferEntry to the list of entries on the display. Note
-	 * that this method does not actually draw the graph, but simply stores the
-	 * entry; the graph is drawn by calling update.
+	/*
+	 * Method addEntry takes a NameSurferEntry and records it into the arrayList
+	 * entryList. By doing so this particular entry will be ready to be put on
+	 * canvas.
 	 */
 	public void addEntry(NameSurferEntry entry) {
+
+		// Add this entry to the array list.
 		entryList.add(entry);
+
+		// Update graph.
 		this.update();
 
 	}
 
+	/*
+	 * Method drawGraph defines how a single entry is displayed on the graph. It
+	 * is to be called by the update method every time the graph is updated.
+	 */
 	private void drawGraph(int entryListIndex) {
+
+		// The method takes in an arrayList index,
+		// and gets that entry first.
 		NameSurferEntry entry = entryList.get(entryListIndex);
 
+		// For convenience, make variables to store the size,
+		// dimensions of the graph, label, line, etc.
 		int top = GRAPH_MARGIN_SIZE;
 		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE;
 		int yRange = bottom - top;
@@ -97,7 +112,8 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 				c = Color.MAGENTA;
 				break;
 			default:
-				c = Color.BLACK; break;
+				c = Color.BLACK;
+				break;
 			}
 
 			graphLine.setColor(c);
