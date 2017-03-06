@@ -50,10 +50,10 @@ public class NameSurferGraph extends GCanvas
 			int value = entry.getRank(i);
 			int _value = entry.getRank(i-1);
 			
-			double xi;
-			double yi;
-			double _xi;
-			double _yi;
+			double xi =0;
+			double yi = 0;
+			double _xi = 0;
+			double _yi = 0;
 			String nameNRank ="";
 			String _nameNRank = "";
 			
