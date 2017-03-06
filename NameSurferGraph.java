@@ -49,7 +49,9 @@ public class NameSurferGraph extends GCanvas
 	}
 	
 	
-	private void drawGraph(NameSurferEntry entry) {
+	private void drawGraph(int entryListIndex) {
+		NameSurferEntry entry = entryList.get(entryListIndex);
+		
 		int top = GRAPH_MARGIN_SIZE;
 		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE;
 		int yRange = bottom - top;
@@ -82,6 +84,12 @@ public class NameSurferGraph extends GCanvas
 			double _yi = top + yRange * (_value * 1.00 / MAX_RANK );
 			
 			GLine graphLine = new GLine (_xi,_yi,xi,yi);
+			switch (entryListIndex % 4){
+			case 0: graphLine.setColor(Color.BLACK); break;
+			case 1: graphLine.setColor(Color.RED); break;
+			case 2: graphLine.setColor(Color.BLUE); break;
+			case 3 : graphLine.setColor(Color.MAGENTA); break;
+			}
 			this.add(graphLine);
 
 			GLabel nameNRankLabel = new GLabel (nameNRank);
@@ -109,7 +117,7 @@ public class NameSurferGraph extends GCanvas
 		this.drawBackground();
 
 		for (int i = 0; i < entryList.size(); i ++){
-			drawGraph(entryList.get(i));
+			drawGraph(i);
 		}
 	}
 	
