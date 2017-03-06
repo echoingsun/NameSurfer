@@ -49,15 +49,14 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 		this.update();
 
 	}
-	
+
 	/*
 	 * Method removeEntry takes in an entry and remove it from the arrayList.
 	 */
-	public void removeEntry (Extension_NameSurferEntry entry){
+	public void removeEntry(Extension_NameSurferEntry entry) {
 		entryList.remove(entry);
 		this.update();
 	}
-	
 
 	/*
 	 * Method drawGraph defines how a single entry is displayed on the graph. It
@@ -71,8 +70,8 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 
 		// For convenience, make variables to store the size,
 		// dimensions of the graph, label, line, etc.
-		int top = GRAPH_MARGIN_SIZE; 
-		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE; 
+		int top = GRAPH_MARGIN_SIZE;
+		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE;
 		int yRange = bottom - top;
 		double interval = this.getWidth() / NDECADES;
 
@@ -91,7 +90,7 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 			// instead of to the top.
 			// The label should also show asterisk instead of the number
 			// of the rank.
-			int value = entry.getRank(i); 
+			int value = entry.getRank(i);
 			if (value == 0) {
 				value = MAX_RANK;
 				nameNRank = entry.getName() + " *";
@@ -119,12 +118,12 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 			// For each rank looped, make a line between it
 			// and the previous decade.
 			GLine graphLine = new GLine(_xi, _yi, xi, yi);
-			
+
 			// Also make labels to show on each decade point.
 			GLabel nameNRankLabel = new GLabel(nameNRank);
 			GLabel _nameNRankLabel = new GLabel(_nameNRank);
 
-			// Define a color loop that helps change colors 
+			// Define a color loop that helps change colors
 			// of the consecutive entries.
 			Color c = null;
 			switch (entryListIndex % 4) {
@@ -144,7 +143,7 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 				c = Color.BLACK;
 				break;
 			}
-			
+
 			// Set both the label and the lines into that one
 			// same color.
 			graphLine.setColor(c);
@@ -152,7 +151,7 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 
 			this.add(graphLine);
 
-			// For the labels, when i = 1, it also needs to 
+			// For the labels, when i = 1, it also needs to
 			// display the label of the (i-1)'th rank.
 			// IDT is the indent (defined as constant) to make
 			// the interface a better looking one.
@@ -164,24 +163,20 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 		}
 	}
 
-	public void showMessage(){
-
-			GLabel noRecord = new GLabel("Record not found. Please try a new search.");
-			this.add(noRecord, (this.getWidth() - noRecord.getWidth()) * 0.5,
-					(this.getHeight() + noRecord.getAscent()) * 0.5);
-			
-	
+	public void showMessage() {
+		GLabel noRecord = new GLabel("Record not found. Please try a new search.");
+		noRecord.setColor(Color.RED);
+		this.add(noRecord, (this.getWidth() - noRecord.getWidth()) * 0.5,
+				(this.getHeight() + noRecord.getAscent()) * 0.5);
 	}
-	
+
 	/*
-	 * Method update makes sure that:
-	 * (1) new entries will be added to the screen 
-	 * while the old ones remain.
-	 * (2) when the size of the window changes, all the display
-	 * changes.
+	 * Method update makes sure that: (1) new entries will be added to the
+	 * screen while the old ones remain. (2) when the size of the window
+	 * changes, all the display changes.
 	 */
 	public void update() {
-		
+
 		// On every update, clear canvas and re-put the background grids.
 		this.removeAll();
 		this.drawBackground();
