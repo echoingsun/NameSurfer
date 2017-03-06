@@ -62,17 +62,27 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 
 		// For convenience, make variables to store the size,
 		// dimensions of the graph, label, line, etc.
-		int top = GRAPH_MARGIN_SIZE;
-		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE;
+		int top = GRAPH_MARGIN_SIZE; 
+		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE; 
 		int yRange = bottom - top;
-
 		double interval = this.getWidth() / NDECADES;
 
+		// Loop and get the rank for every decade in entry.getRank,
+		// and display them proportionately on the graph.
+		// Also, draw lines to connect these points that stand for
+		// the ranks.
+		// Here let i starts at 1.
 		for (int i = 1; i < NDECADES; i++) {
-			String nameNRank = "";
-			String _nameNRank = "";
+			String nameNRank = ""; // the string for the i'th rank.
+			String _nameNRank = "";// the string for the (i-1)'th rank.
 
-			int value = entry.getRank(i);
+			// The rank at i'th decade.
+			// If it's 0, meaning it's not ranking in the first 1000,
+			// the rank should go to the bottom of the graph
+			// instead of to the top.
+			// The label should also show asterisk instead of the number
+			// of the rank.
+			int value = entry.getRank(i); 
 			if (value == 0) {
 				value = MAX_RANK;
 				nameNRank = entry.getName() + " *";
@@ -80,6 +90,7 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 				nameNRank = entry.getName() + " " + Integer.toString(value);
 			}
 
+			// Similar for the rank at (i-1)'th decade.
 			int _value = entry.getRank(i - 1);
 			if (_value == 0) {
 				_value = MAX_RANK;
@@ -88,6 +99,9 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 				_nameNRank = entry.getName() + " " + Integer.toString(_value);
 			}
 
+			// Once the values of the two decades are determined,
+			// mark them as points on the graph
+			// and connect them with lines.
 			double xi = interval * i;
 			double yi = top + yRange * (value * 1.00 / MAX_RANK);
 			double _xi = interval * (i - 1);
