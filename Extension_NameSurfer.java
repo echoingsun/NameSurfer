@@ -72,7 +72,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 	 * from the names-data.txt.
 	 */
 	private void loadDatabase() {
-		namesData = new NameSurferDataBase(NAMES_DATA_FILE);
+		namesData = new Extension_NameSurferDataBase(NAMES_DATA_FILE);
 	}
 
 	
