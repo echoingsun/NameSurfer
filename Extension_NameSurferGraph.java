@@ -51,7 +51,8 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 	}
 	
 	public void removeEntry (Extension_NameSurferEntry entry){
-		
+		entryList.remove(entry);
+		this.update();
 	}
 
 	/*
