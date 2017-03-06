@@ -155,28 +155,34 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 		}
 	}
 
-	/**
-	 * Updates the display image by deleting all the graphical objects from the
-	 * canvas and then reassembling the display according to the list of
-	 * entries. Your application must call update after calling either clear or
-	 * addEntry; update is also called whenever the size of the canvas changes.
+	/*
+	 * Method update makes sure that:
+	 * (1) new entries will be added to the screen 
+	 * while the old ones remain.
+	 * (2) when the size of the window changes, all the display
+	 * changes.
 	 */
 	public void update() {
+		
+		// On every update, clear canvas and re-put the background grids.
 		this.removeAll();
 		this.drawBackground();
 
+		// Re-add all the graphs in the arrayList entryList.
 		for (int i = 0; i < entryList.size(); i++) {
 			drawGraph(i);
 		}
 	}
 
+	/*
+	 * Method drawBackground puts up the grids and year labels.
+	 */
 	private void drawBackground() {
 
 		double interval = this.getWidth() / NDECADES;
 		for (int i = 0; i < NDECADES - 1; i++) {
 			GLine line = new GLine(interval * (i + 1), 0, interval * (i + 1), this.getHeight());
 			this.add(line);
-
 		}
 
 		for (int i = 0; i < NDECADES; i++) {
