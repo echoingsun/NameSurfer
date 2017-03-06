@@ -16,8 +16,8 @@ import java.awt.*;
 
 public class Extension_NameSurferGraph extends GCanvas implements NameSurferConstants, ComponentListener {
 
-	// Define an array list that will be used to store the entries.
-	ArrayList<Extension_NameSurferEntry> entryList = new ArrayList<Extension_NameSurferEntry>();
+	// Define a hashmap that will be used to store and remove the entries.
+	HashMap<String, Extension_NameSurferEntry> entryList = new HashMap<String, Extension_NameSurferEntry>();
 
 	/*
 	 * The constructor creates a new NameSurferGraph (GCanvas).
