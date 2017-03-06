@@ -49,12 +49,25 @@ public class NameSurferGraph extends GCanvas
 		for (int i = 1; i < NDECADES; i ++){
 			int value = entry.getRank(i);
 			int _value = entry.getRank(i-1);
+			
 			double xi = interval * i;
 			double yi = top + yRange * (value * 1.00 / MAX_RANK );
 			double _xi = interval * (i-1);
 			double _yi = top + yRange * (_value * 1.00 / MAX_RANK );
+			
 			GLine graphLine = new GLine (_xi,_yi,xi,yi);
 			this.add(graphLine);
+			
+			String nameNRank = entry.getName() + " " + Integer.toString(value);
+			String _nameNRank = entry.getName () + " " + Integer.toString(_value);
+			GLabel nameNRankLabel = new GLabel (nameNRank);
+			GLabel _nameNRankLabel = new GLabel (_nameNRank);
+			
+			if (i == 1){
+				this.add (_nameNRankLabel,_xi+IDT, _yi - IDT);
+			}
+			this.add(nameNRankLabel, xi + IDT, yi - IDT );
+			
 		}
 	}
 	
