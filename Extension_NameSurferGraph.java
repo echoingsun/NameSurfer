@@ -17,7 +17,7 @@ import java.awt.*;
 public class Extension_NameSurferGraph extends GCanvas implements NameSurferConstants, ComponentListener {
 
 	// Define an array list that will be used to store the entries.
-	ArrayList<NameSurferEntry> entryList = new ArrayList<NameSurferEntry>();
+	ArrayList<Extension_NameSurferEntry> entryList = new ArrayList<Extension_NameSurferEntry>();
 
 	/*
 	 * The constructor creates a new NameSurferGraph (GCanvas).
@@ -40,7 +40,7 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 	 * entryList. By doing so this particular entry will be ready to be put on
 	 * canvas.
 	 */
-	public void addEntry(NameSurferEntry entry) {
+	public void addEntry(Extension_NameSurferEntry entry) {
 
 		// Add this entry to the array list.
 		entryList.add(entry);
@@ -58,7 +58,7 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 
 		// The method takes in an arrayList index,
 		// and gets that entry first.
-		NameSurferEntry entry = entryList.get(entryListIndex);
+		Extension_NameSurferEntry entry = entryList.get(entryListIndex);
 
 		// For convenience, make variables to store the size,
 		// dimensions of the graph, label, line, etc.
