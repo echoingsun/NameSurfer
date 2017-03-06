@@ -37,19 +37,30 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	    
 	    addActionListeners();  
 
-	    
+	    // http://stackoverflow.com/questions/25007113/pressing-jbutton-with-the-enter-key
+	    textField.addKeyListener(new KeyAdapter() {
+	    	@Override
+	    	public void keyPressed (KeyEvent e){
+	    		if (e.getKeyCode() == KeyEvent.VK_ENTER){
+	    			String nameEntry = textField.getText();
+	    			if (namesData.findEntry(nameEntry) != null){
+	    				NameSurferEntry newInquiry = new NameSurferEntry (namesData.findEntry(nameEntry).toString());
+	    				graph.addEntry(newInquiry);
+	    		}
+	    	}
+	    }
+	    	
+	    });
 	    
 	    
 	   
 	}
 	
-	public void keyPressed (KeyEvent e){
-		
-	}
-	
 	public void run() {
 		
 	}
+	
+
 	
 
 
