@@ -10,6 +10,7 @@
  * (1) Added "remove" button. If user wants to remove the graph of a certain
  * name that's already on the screen, put that name in the text field and click
  * "remove".
+ * (2) Display error message when record is not found.
  */
 
 import acm.graphics.GLabel;
