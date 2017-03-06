@@ -59,23 +59,23 @@ public class NameSurfer extends Program implements NameSurferConstants {
 
 	}
 
-
+	/*
+	 * Method loadGraph adds a new NameSurferGraph to the application.
+	 */
 	private void loadGraph() {
 		graph = new NameSurferGraph();
 		add(graph);
-
 	}
 
+	/*
+	 * Method loadDatabase initializes the db that stores the information
+	 * from the names-data.txt.
+	 */
 	private void loadDatabase() {
 		namesData = new NameSurferDataBase(NAMES_DATA_FILE);
-
 	}
 
-	/* Method: actionPerformed(e) */
-	/**
-	 * This class is responsible for detecting when the buttons are clicked, so
-	 * you will have to define a method to respond to button actions.
-	 */
+
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("Graph")) {
 			String nameEntry = textField.getText();
