@@ -75,15 +75,29 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		namesData = new NameSurferDataBase(NAMES_DATA_FILE);
 	}
 
-
+	
 	public void actionPerformed(ActionEvent e) {
+		
+		// Click on JButon graph will add an entry to the NameSurferGraph
+		// if the name entered can be traced with record in the database.
 		if (e.getActionCommand().equals("Graph")) {
+			
+			// Get name from the textbox.
 			String nameEntry = textField.getText();
+			
+			// Ask the database to find the related record if any.
 			if (namesData.findEntry(nameEntry) != null) {
+				
+				// Return the result from database, 
+				// Generate a new entry from the result.
 				NameSurferEntry newInquiry = new NameSurferEntry(namesData.findEntry(nameEntry).toString());
+				
+				// Add that new entry to the graph.
 				graph.addEntry(newInquiry);
 			}
 		}
+		
+		// Click on JButton clear asks the NameSurferGraph to clear its contents.
 		if (e.getActionCommand().equals("Clear")) {
 			graph.clear();
 		}
