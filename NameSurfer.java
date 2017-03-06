@@ -42,7 +42,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	}
 	
 	public void run() {
-		
+		graph.drawBackground();
 	}
 	
 
