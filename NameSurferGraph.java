@@ -52,7 +52,7 @@ public class NameSurferGraph extends GCanvas
 			double xi = interval * i;
 			double yi = top + yRange * (value * 1.00 / MAX_RANK );
 			double _xi = interval * (i-1);
-			double _yi = top + yRange * (_value * 1.00/ MAX_RANK );
+			double _yi = top + yRange * (_value * 1.00 / MAX_RANK );
 			GLine graphLine = new GLine (_xi,_yi,xi,yi);
 			this.add(graphLine);
 		}
