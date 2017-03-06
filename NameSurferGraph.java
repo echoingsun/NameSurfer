@@ -22,12 +22,8 @@ public class NameSurferGraph extends GCanvas
 	*/
 	public NameSurferGraph() {
 		addComponentListener(this);
-		// drawBackground();
-		GLine upperMargin = new GLine(200,150,400,280);
-		GLine bottomMargin = new GLine(300,200,500,100);
-		
-		this.add(upperMargin);
-		this.add(bottomMargin);
+		drawBackground();
+
 	}
 	
 	
@@ -61,7 +57,7 @@ public class NameSurferGraph extends GCanvas
 		// You fill this in //
 	}
 	
-/*	private void drawBackground(){
+	private void drawBackground(){
 		
 		double interval = this.getWidth() / NDECADES;
 		for (int i = 0; i < NDECADES - 1; i ++){
@@ -74,7 +70,7 @@ public class NameSurferGraph extends GCanvas
 		
 		this.add(upperMargin);
 		this.add(bottomMargin);
-	}*/
+	}
 	
 	
 	/* Implementation of the ComponentListener interface */
