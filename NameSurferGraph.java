@@ -48,7 +48,13 @@ public class NameSurferGraph extends GCanvas
 		
 		for (int i = 1; i < NDECADES; i ++){
 			int value = entry.getRank(i);
+			if (value == 0){
+				value = MAX_RANK;
+			}
 			int _value = entry.getRank(i-1);
+			if (_value == 0) {
+				_value = MAX_RANK;
+			}
 			
 			double xi = interval * i;
 			double yi = top + yRange * (value * 1.00 / MAX_RANK );
