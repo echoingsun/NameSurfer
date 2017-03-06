@@ -20,10 +20,10 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 	private JButton clearButton = new JButton("Clear");
 	
 	// Define the database to be used.
-	private NameSurferDataBase namesData;
+	private Extension_NameSurferDataBase namesData;
 	
 	// Define the canvas to display data.
-	private NameSurferGraph graph;
+	private Extension_NameSurferGraph graph;
 
 	public void init() {
 
@@ -50,7 +50,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 					// Detailed comments see method ActionPerformed
 					String nameEntry = textField.getText();
 					if (namesData.findEntry(nameEntry) != null) {
-						NameSurferEntry newInquiry = new NameSurferEntry(namesData.findEntry(nameEntry).toString());
+						Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(namesData.findEntry(nameEntry).toString());
 						graph.addEntry(newInquiry);
 					}
 				}
@@ -63,7 +63,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 	 * Method loadGraph adds a new NameSurferGraph to the application.
 	 */
 	private void loadGraph() {
-		graph = new NameSurferGraph();
+		graph = new Extension_NameSurferGraph();
 		add(graph);
 	}
 
@@ -90,7 +90,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 				
 				// Return the result from database, 
 				// Generate a new entry from the result.
-				NameSurferEntry newInquiry = new NameSurferEntry(namesData.findEntry(nameEntry).toString());
+				Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(namesData.findEntry(nameEntry).toString());
 				
 				// Add that new entry to the graph.
 				graph.addEntry(newInquiry);
