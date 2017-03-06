@@ -96,16 +96,17 @@ public class NameSurferGraph extends GCanvas implements NameSurferConstants, Com
 			case 3:
 				c = Color.MAGENTA;
 				break;
-			default: c = Color.BLACK;
+			default:
+				c = Color.BLACK; break;
 			}
-			
-			
+
 			graphLine.setColor(c);
 			nameNRankLabel.setColor(c);
-			
+
 			this.add(graphLine);
 
 			if (i == 1) {
+				_nameNRankLabel.setColor(nameNRankLabel.getColor());
 				this.add(_nameNRankLabel, _xi + IDT, _yi - IDT);
 			}
 			this.add(nameNRankLabel, xi + IDT, yi - IDT);
