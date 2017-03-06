@@ -41,8 +41,9 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 		add(nameLabel, NORTH);
 		add(textField, NORTH);
 		add(graphButton, NORTH);
-		add(clearButton, NORTH);
 		add(removeButton, NORTH);
+		add(clearButton, NORTH);
+		
 
 		addActionListeners();
 
