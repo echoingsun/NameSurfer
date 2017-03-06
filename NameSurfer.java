@@ -28,6 +28,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	public void init() {
 		
 		loadDatabase();
+		loadGraph();
 		
 		add (nameLabel, NORTH);
 	    add (textField, NORTH);
@@ -35,7 +36,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	    add (clearButton, NORTH);
 	    
 	    addActionListeners();   
-	    loadGraph();
+	    
 	   
 	}
 	
