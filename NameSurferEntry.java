@@ -46,8 +46,8 @@ public class NameSurferEntry implements NameSurferConstants {
  * which is given by the constant START_DECADE.  If a name does
  * not appear in a decade, the rank value is 0.
  */
-	public int getRank(int decade) {
-		return rank[(decade - START_DECADE) / 10];
+	public int getRank(int decadeIndex) {
+		return rank[decadeIndex];
 	}
 
 /* Method: toString() */
