@@ -57,7 +57,7 @@ public class NameSurferGraph extends GCanvas
 		// You fill this in //
 	}
 	
-	public void drawBackground(double h){
+	public void drawBackground(int h){
 		
 		double interval = this.getWidth() / NDECADES;
 		for (int i = 0; i < NDECADES - 1; i ++){
