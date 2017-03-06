@@ -47,10 +47,12 @@ public class NameSurferGraph extends GCanvas
 		double interval = this.getWidth() / NDECADES;
 		
 		for (int i = 1; i < NDECADES; i ++){
+			int value = entry.getRank(i);
+			int _value = entry.getRank(i-1);
 			double xi = interval * i;
-			double yi = top + yRange * (entry.getRank(i) / MAX_RANK);
+			double yi = top + yRange * (value / MAX_RANK);
 			double _xi = interval * (i-1);
-			double _yi = top + yRange * (entry.getRank((i-1) / MAX_RANK));
+			double _yi = top + yRange * (_value / MAX_RANK);
 			GLine graphLine = new GLine (_xi,_yi,xi,yi);
 			this.add(graphLine);
 		}
