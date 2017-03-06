@@ -35,7 +35,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	    add (graphButton, NORTH);
 	    add (clearButton, NORTH);
 	    
-	    addActionListeners();   
+	    addActionListeners();  
 	    
 	    
 	   
