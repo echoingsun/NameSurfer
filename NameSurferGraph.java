@@ -44,42 +44,22 @@ public class NameSurferGraph extends GCanvas
 		int bottom = this.getHeight() - GRAPH_MARGIN_SIZE;
 		int yRange = bottom - top;
 		
-		double xi =0;
-		double yi = 0;
-		double _xi = 0;
-		double _yi = 0;
-		
 		double interval = this.getWidth() / NDECADES;
 		
 		for (int i = 1; i < NDECADES; i ++){
 			int value = entry.getRank(i);
 			int _value = entry.getRank(i-1);
 			
+			double xi = interval * i;
+			double yi = top + yRange * (value * 1.00 / MAX_RANK );
+			double _xi = interval * (i-1);
+			double _yi = top + yRange * (_value * 1.00 / MAX_RANK );
 			
-			String nameNRank ="";
-			String _nameNRank = "";
-			
-			xi = interval * i;
-			if (value == 0){
-				yi = top + yRange;
-				nameNRank = (entry.getName() + " *");
-			} else {
-				yi = top + yRange * (value * 1.00 / MAX_RANK );
-				nameNRank = entry.getName() + " " + Integer.toString(value);
-			}
-			
-			_xi = interval * (i-1);
-			if (_value == 0){
-				_yi = top + yRange * (_value * 1.00 / MAX_RANK );
-				_nameNRank = entry.getName () + " " + Integer.toString(_value);
-			} else {
-				_yi = top + yRange * (value * 1.00 / MAX_RANK );
-				_nameNRank = entry.getName() + " " + Integer.toString(value);
-			}
-						
 			GLine graphLine = new GLine (_xi,_yi,xi,yi);
 			this.add(graphLine);
 			
+			String nameNRank = entry.getName() + " " + Integer.toString(value);
+			String _nameNRank = entry.getName () + " " + Integer.toString(_value);
 			GLabel nameNRankLabel = new GLabel (nameNRank);
 			GLabel _nameNRankLabel = new GLabel (_nameNRank);
 			
