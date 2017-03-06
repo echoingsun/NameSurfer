@@ -61,7 +61,7 @@ public class NameSurferGraph extends GCanvas
 		
 		double interval = this.getWidth() / NDECADES;
 		for (int i = 0; i < NDECADES - 1; i ++){
-			GLine line = new GLine (interval * (i+1), 0, interval * (i+1), this.getHeight() -h );
+			GLine line = new GLine (interval * (i+1), 0, interval * (i+1), this.getHeight()-h);
 			this.add(line);
 		}
 		
