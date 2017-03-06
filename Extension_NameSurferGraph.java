@@ -50,10 +50,14 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 
 	}
 	
+	/*
+	 * Method removeEntry takes in an entry and remove it from the arrayList.
+	 */
 	public void removeEntry (Extension_NameSurferEntry entry){
 		entryList.remove(entry);
 		this.update();
 	}
+	
 
 	/*
 	 * Method drawGraph defines how a single entry is displayed on the graph. It
