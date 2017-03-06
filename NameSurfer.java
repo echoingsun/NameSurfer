@@ -45,7 +45,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 private void loadGraph() {
 	graph = new NameSurferGraph();
 	add(graph);
-	graph.drawBackground(nameLabel.getHeight());
+	graph.drawBackground();
 	
 }
 
