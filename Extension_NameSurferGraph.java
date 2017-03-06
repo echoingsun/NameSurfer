@@ -166,7 +166,7 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 
 	public void showMessage(){
 
-			GLabel noRecord = new GLabel("Record not found.\n Please try a new search.");
+			GLabel noRecord = new GLabel("Record not found. Please try a new search.");
 			this.add(noRecord, (this.getWidth() - noRecord.getWidth()) * 0.5,
 					(this.getHeight() + noRecord.getAscent()) * 0.5);
 			
