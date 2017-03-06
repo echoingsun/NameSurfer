@@ -22,8 +22,6 @@ public class NameSurferGraph extends GCanvas
 	*/
 	public NameSurferGraph() {
 		addComponentListener(this);
-	
-
 	}
 	
 	
@@ -64,6 +62,11 @@ public class NameSurferGraph extends GCanvas
 		for (int i = 0; i < NDECADES - 1; i ++){
 			GLine line = new GLine (interval * (i+1), 0, interval * (i+1), this.getHeight());
 			this.add(line);
+			
+			int decade = START_DECADE + 10 * i;
+			String decadeStr = Integer.toString(decade);
+			GLabel decadeLabel = new GLabel (decadeStr);
+			add (decadeLabel, IDT + interval * i, this.getHeight());
 		}
 		
 		GLine upperMargin = new GLine(0, GRAPH_MARGIN_SIZE, this.getWidth(), GRAPH_MARGIN_SIZE);
@@ -71,6 +74,8 @@ public class NameSurferGraph extends GCanvas
 		
 		this.add(upperMargin);
 		this.add(bottomMargin);
+		
+
 	}
 	
 	
