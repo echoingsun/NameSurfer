@@ -31,5 +31,8 @@ public interface NameSurferConstants {
 	
 	/** The length of the JTextField */
 	public static final int TF_LEN = 20;
+	
+	/** The indent of the decade label */
+	public static final int IDT = 20;
 
 }
