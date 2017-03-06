@@ -68,7 +68,8 @@ private void loadDatabase() {
 		if (e.getActionCommand().equals("Graph")){
 			String nameEntry = textField.getText();
 			if (namesData.findEntry(nameEntry) != null){
-				println ("Graph: " + namesData.findEntry(nameEntry).toString());
+				NameSurferEntry newInquiry = new NameSurferEntry (namesData.findEntry(nameEntry).toString());
+				graph.addEntry(newInquiry);
 			}			
 		}
 		if (e.getActionCommand().equals("Clear")){
