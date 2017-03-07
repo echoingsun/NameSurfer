@@ -57,6 +57,15 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 		entryList.remove(entry);
 		this.update();
 	}
+	
+	public boolean graphExist (Extension_NameSurferEntry entry){
+		for (int i = 0; i < entryList.size(); i ++){
+			if (entry.getName().toLowerCase().equals(entryList.get(i).getName().toLowerCase())){
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/*
 	 * Method drawGraph defines how a single entry is displayed on the graph. It
