@@ -102,14 +102,10 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 
 				// Empty the text box for the next entry.
 				textField.setText("");
-				
-				// Return the result from database,
-				// Generate a new entry from the result.
-				Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(
-						namesData.findEntry(nameEntry).toString());
 
 				// Add that new entry to the graph.
-				graph.addEntry(newInquiry);
+				textField.setText("");
+				graph.addEntry(namesData.findEntry(nameEntry));
 			} else {
 				graph.showMessage();
 			}
