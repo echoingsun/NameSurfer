@@ -12,6 +12,7 @@
  * "remove".
  * (2) Display error message when record is not found.
  * (3) Empty the text field for next inquiry when a search returns valid record.
+ * (4) Prompt error message when user tries to display an existing graph.
  */
 
 import acm.graphics.GLabel;
