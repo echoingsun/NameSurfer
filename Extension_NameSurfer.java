@@ -109,7 +109,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 				// Add that new entry to the graph.
 				textField.setText("");
 				graph.addEntry(namesData.findEntry(nameEntry));
-			} else if (graph.graphExist(namesData.findEntry(nameEntry)) == true) {
+			} else if (graph.graphExist(nameEntry) == true) {
 				graph.recordExists();
 			} else {
 				graph.noRecord();
