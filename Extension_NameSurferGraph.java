@@ -178,6 +178,8 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 		this.add(noRecord, (this.getWidth() - noRecord.getWidth()) * 0.5,
 				(this.getHeight() + noRecord.getAscent()) * 0.5);
 	}
+	
+	
 
 	/*
 	 * Method update makes sure that: (1) new entries will be added to the
