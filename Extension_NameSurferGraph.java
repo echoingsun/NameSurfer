@@ -179,6 +179,12 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 				(this.getHeight() + noRecord.getAscent()) * 0.5);
 	}
 	
+	public void recordExists(){
+		GLabel recordExists = new GLabel("Record already graphed. Please try a new search.");
+		recordExists.setColor(Color.RED);
+		this.add(recordExists, (this.getWidth() - recordExists.getWidth()) * 0.5,
+				(this.getHeight() + recordExists.getAscent()) * 0.5);
+	}
 	
 
 	/*
