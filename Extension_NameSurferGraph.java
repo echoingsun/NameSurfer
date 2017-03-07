@@ -57,10 +57,10 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 		entryList.remove(entry);
 		this.update();
 	}
-	
-	public boolean graphExist (String nameEntry){
-		for (int i = 0; i < entryList.size(); i ++){
-			if (nameEntry.toLowerCase().equals(entryList.get(i).getName().toLowerCase())){
+
+	public boolean graphExist(String nameEntry) {
+		for (int i = 0; i < entryList.size(); i++) {
+			if (nameEntry.toLowerCase().equals(entryList.get(i).getName().toLowerCase())) {
 				return true;
 			}
 		}
@@ -178,14 +178,13 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 		this.add(noRecord, (this.getWidth() - noRecord.getWidth()) * 0.5,
 				(this.getHeight() + noRecord.getAscent()) * 0.5);
 	}
-	
-	public void recordExists(){
+
+	public void recordExists() {
 		GLabel recordExists = new GLabel("Record already graphed. Please try a new search.");
 		recordExists.setColor(Color.RED);
 		this.add(recordExists, (this.getWidth() - recordExists.getWidth()) * 0.5,
-				this.getHeight() * 0.5 + recordExists.getAscent());
+				this.getHeight() * 0.5 + recordExists.getAscent() * 2);
 	}
-	
 
 	/*
 	 * Method update makes sure that: (1) new entries will be added to the
