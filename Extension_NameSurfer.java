@@ -62,9 +62,7 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 					if (namesData.findEntry(nameEntry) != null) {
 						// Empty the text box for the next entry.
 						textField.setText("");
-						Extension_NameSurferEntry newInquiry = new Extension_NameSurferEntry(
-								namesData.findEntry(nameEntry).toString());
-						graph.addEntry(newInquiry);
+						graph.addEntry(namesData.findEntry(nameEntry));
 					}else {
 						graph.showMessage();
 					}
