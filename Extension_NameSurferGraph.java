@@ -58,9 +58,9 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 		this.update();
 	}
 	
-	public boolean graphExist (Extension_NameSurferEntry entry){
+	public boolean graphExist (String nameEntry){
 		for (int i = 0; i < entryList.size(); i ++){
-			if (entry.getName().toLowerCase().equals(entryList.get(i).getName().toLowerCase())){
+			if (nameEntry.toLowerCase().equals(entryList.get(i).getName().toLowerCase())){
 				return true;
 			}
 		}
