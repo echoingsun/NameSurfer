@@ -172,7 +172,7 @@ public class Extension_NameSurferGraph extends GCanvas implements NameSurferCons
 		}
 	}
 
-	public void showMessage() {
+	public void noRecord() {
 		GLabel noRecord = new GLabel("Record not found. Please try a new search.");
 		noRecord.setColor(Color.RED);
 		this.add(noRecord, (this.getWidth() - noRecord.getWidth()) * 0.5,
