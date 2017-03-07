@@ -50,8 +50,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 					// Detailed comments see method ActionPerformed
 					String nameEntry = textField.getText();
 					if (namesData.findEntry(nameEntry) != null) {
-						NameSurferEntry newInquiry = new NameSurferEntry(namesData.findEntry(nameEntry).toString());
-						graph.addEntry(newInquiry);
+						graph.addEntry(namesData.findEntry(nameEntry));
 					}
 				}
 			}
@@ -88,12 +87,8 @@ public class NameSurfer extends Program implements NameSurferConstants {
 			// Ask the database to find the related record if any.
 			if (namesData.findEntry(nameEntry) != null) {
 				
-				// Return the result from database, 
-				// Generate a new entry from the result.
-				NameSurferEntry newInquiry = new NameSurferEntry(namesData.findEntry(nameEntry).toString());
-				
 				// Add that new entry to the graph.
-				graph.addEntry(newInquiry);
+				graph.addEntry(namesData.findEntry(nameEntry));
 			}
 		}
 		
