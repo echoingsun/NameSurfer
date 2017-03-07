@@ -65,6 +65,8 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 						textField.setText("");
 						graph.addEntry(namesData.findEntry(nameEntry));
 					} else if (graph.graphExist(nameEntry) == true) {
+						// Empty the text box for the next entry.
+						textField.setText("");
 						graph.recordExists();
 					} else {
 						graph.noRecord();
@@ -110,6 +112,8 @@ public class Extension_NameSurfer extends Program implements NameSurferConstants
 				textField.setText("");
 				graph.addEntry(namesData.findEntry(nameEntry));
 			} else if (graph.graphExist(nameEntry) == true) {
+				// Empty the text box for the next entry.
+				textField.setText("");
 				graph.recordExists();
 			} else {
 				graph.noRecord();
